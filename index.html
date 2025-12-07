@@ -1,0 +1,683 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2865
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <title>WM Films \'96 Director, Cinematographer & Colorist</title>\
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\
+  <style>\
+    * \{\
+      margin: 0;\
+      padding: 0;\
+      box-sizing: border-box;\
+    \}\
+\
+    body \{\
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
+      background: #050505;\
+      color: #f5f5f5;\
+      line-height: 1.6;\
+    \}\
+\
+    a \{\
+      color: inherit;\
+      text-decoration: none;\
+    \}\
+\
+    header \{\
+      position: fixed;\
+      top: 0;\
+      left: 0;\
+      width: 100%;\
+      z-index: 100;\
+      background: rgba(5, 5, 5, 0.92);\
+      backdrop-filter: blur(10px);\
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);\
+    \}\
+\
+    .nav \{\
+      max-width: 1100px;\
+      margin: 0 auto;\
+      padding: 0.8rem 1.5rem;\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+    \}\
+\
+    .logo \{\
+      font-weight: 700;\
+      letter-spacing: 0.12em;\
+      font-size: 0.9rem;\
+      text-transform: uppercase;\
+    \}\
+\
+    .logo span \{\
+      opacity: 0.6;\
+      font-weight: 400;\
+      margin-left: 0.3rem;\
+    \}\
+\
+    .nav-links \{\
+      display: flex;\
+      gap: 1.5rem;\
+      font-size: 0.9rem;\
+    \}\
+\
+    .nav-links a \{\
+      opacity: 0.7;\
+      transition: opacity 0.2s ease;\
+    \}\
+\
+    .nav-links a:hover \{\
+      opacity: 1;\
+    \}\
+\
+    /* Layout helpers */\
+    main \{\
+      margin-top: 64px; /* height of header */\
+    \}\
+\
+    section \{\
+      max-width: 1100px;\
+      margin: 0 auto;\
+      padding: 3.5rem 1.5rem;\
+    \}\
+\
+    .eyebrow \{\
+      text-transform: uppercase;\
+      letter-spacing: 0.15em;\
+      font-size: 0.7rem;\
+      opacity: 0.6;\
+      margin-bottom: 0.75rem;\
+    \}\
+\
+    h1, h2, h3 \{\
+      font-weight: 600;\
+    \}\
+\
+    h1 \{\
+      font-size: clamp(2.3rem, 4vw, 3rem);\
+      margin-bottom: 1rem;\
+    \}\
+\
+    h2 \{\
+      font-size: 1.4rem;\
+      margin-bottom: 1rem;\
+    \}\
+\
+    p \{\
+      opacity: 0.88;\
+      font-size: 0.95rem;\
+    \}\
+\
+    /* Hero */\
+    .hero \{\
+      display: grid;\
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);\
+      gap: 2rem;\
+      align-items: center;\
+      padding-top: 4rem;\
+      padding-bottom: 3rem;\
+    \}\
+\
+    .hero-subtitle \{\
+      text-transform: uppercase;\
+      letter-spacing: 0.14em;\
+      font-size: 0.75rem;\
+      opacity: 0.7;\
+      margin-bottom: 0.5rem;\
+    \}\
+\
+    .hero-text p \{\
+      margin-bottom: 1.5rem;\
+    \}\
+\
+    .hero-tags \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 0.5rem;\
+      margin-bottom: 1.5rem;\
+    \}\
+\
+    .tag \{\
+      border-radius: 999px;\
+      border: 1px solid rgba(255, 255, 255, 0.16);\
+      padding: 0.2rem 0.7rem;\
+      font-size: 0.7rem;\
+      text-transform: uppercase;\
+      letter-spacing: 0.12em;\
+      opacity: 0.8;\
+    \}\
+\
+    .hero-buttons \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 0.75rem;\
+    \}\
+\
+    .btn \{\
+      border-radius: 999px;\
+      padding: 0.7rem 1.5rem;\
+      font-size: 0.85rem;\
+      text-transform: uppercase;\
+      letter-spacing: 0.12em;\
+      border: 1px solid rgba(255, 255, 255, 0.18);\
+      background: transparent;\
+      cursor: pointer;\
+      display: inline-flex;\
+      align-items: center;\
+      gap: 0.4rem;\
+      transition: background 0.2s ease, transform 0.1s ease, border-color 0.2s;\
+    \}\
+\
+    .btn-primary \{\
+      background: #ff7a1a;\
+      border-color: #ff7a1a;\
+      color: #050505;\
+    \}\
+\
+    .btn:hover \{\
+      transform: translateY(-1px);\
+      background: rgba(255, 255, 255, 0.06);\
+    \}\
+\
+    .btn-primary:hover \{\
+      background: #ff8c37;\
+    \}\
+\
+    .hero-media \{\
+      position: relative;\
+      border-radius: 18px;\
+      overflow: hidden;\
+      border: 1px solid rgba(255, 255, 255, 0.08);\
+      background: radial-gradient(circle at top, #ff7a1a11, #111);\
+      aspect-ratio: 16 / 10;\
+      display: grid;\
+      place-items: center;\
+      padding: 1rem;\
+    \}\
+\
+    .hero-media-inner \{\
+      width: 100%;\
+      height: 100%;\
+      border-radius: 14px;\
+      overflow: hidden;\
+      position: relative;\
+      background: #000;\
+      display: flex;\
+      align-items: center;\
+      justify-content: center;\
+      font-size: 0.8rem;\
+      opacity: 0.9;\
+    \}\
+\
+    .play-badge \{\
+      position: absolute;\
+      inset: 0;\
+      display: flex;\
+      align-items: center;\
+      justify-content: center;\
+      pointer-events: none;\
+    \}\
+\
+    .play-circle \{\
+      width: 64px;\
+      height: 64px;\
+      border-radius: 999px;\
+      border: 1px solid rgba(255, 255, 255, 0.6);\
+      display: flex;\
+      align-items: center;\
+      justify-content: center;\
+      backdrop-filter: blur(8px);\
+    \}\
+\
+    .play-triangle \{\
+      width: 0;\
+      height: 0;\
+      border-left: 14px solid #ffffff;\
+      border-top: 9px solid transparent;\
+      border-bottom: 9px solid transparent;\
+      margin-left: 4px;\
+    \}\
+\
+    .hero-caption \{\
+      position: absolute;\
+      left: 1rem;\
+      bottom: 0.9rem;\
+      font-size: 0.75rem;\
+      opacity: 0.8;\
+      background: rgba(0, 0, 0, 0.6);\
+      padding: 0.4rem 0.7rem;\
+      border-radius: 999px;\
+    \}\
+\
+    /* Work (projects) */\
+    .projects-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));\
+      gap: 1.5rem;\
+      margin-top: 1.5rem;\
+    \}\
+\
+    .project-card \{\
+      border-radius: 14px;\
+      border: 1px solid rgba(255, 255, 255, 0.12);\
+      overflow: hidden;\
+      background: #0c0c0c;\
+      display: flex;\
+      flex-direction: column;\
+      min-height: 230px;\
+    \}\
+\
+    .project-thumb \{\
+      background: #111;\
+      aspect-ratio: 16 / 9;\
+      display: grid;\
+      place-items: center;\
+      font-size: 0.75rem;\
+      opacity: 0.8;\
+    \}\
+\
+    .project-body \{\
+      padding: 0.9rem 1rem 1rem;\
+    \}\
+\
+    .project-meta \{\
+      font-size: 0.7rem;\
+      text-transform: uppercase;\
+      letter-spacing: 0.14em;\
+      opacity: 0.6;\
+      margin-bottom: 0.35rem;\
+    \}\
+\
+    .project-title \{\
+      font-size: 0.95rem;\
+      margin-bottom: 0.3rem;\
+    \}\
+\
+    .project-body p \{\
+      font-size: 0.8rem;\
+      opacity: 0.75;\
+    \}\
+\
+    /* Stills */\
+    .stills-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));\
+      gap: 0.7rem;\
+      margin-top: 1rem;\
+    \}\
+\
+    .still \{\
+      aspect-ratio: 16 / 10;\
+      border-radius: 10px;\
+      overflow: hidden;\
+      background: linear-gradient(135deg, #2a2a2a, #111);\
+      display: grid;\
+      place-items: center;\
+      font-size: 0.7rem;\
+      opacity: 0.8;\
+    \}\
+\
+    /* Newsletter / CTA */\
+    .cta \{\
+      border-radius: 18px;\
+      padding: 2rem 1.5rem;\
+      background: radial-gradient(circle at top, #ff7a1a15, #050505);\
+      border: 1px solid rgba(255, 255, 255, 0.16);\
+      margin-top: 1.5rem;\
+    \}\
+\
+    .cta-row \{\
+      display: grid;\
+      gap: 1.5rem;\
+    \}\
+\
+    .cta-form \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 0.75rem;\
+      margin-top: 1rem;\
+    \}\
+\
+    .cta-form input[type="email"] \{\
+      flex: 1 1 220px;\
+      padding: 0.7rem 0.9rem;\
+      border-radius: 999px;\
+      border: 1px solid rgba(255, 255, 255, 0.18);\
+      background: #050505;\
+      color: #f5f5f5;\
+      font-size: 0.85rem;\
+    \}\
+\
+    .cta-form input::placeholder \{\
+      color: rgba(255, 255, 255, 0.4);\
+    \}\
+\
+    /* About */\
+    .about-layout \{\
+      display: grid;\
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);\
+      gap: 2rem;\
+      align-items: start;\
+    \}\
+\
+    .about-aside \{\
+      font-size: 0.8rem;\
+      opacity: 0.75;\
+    \}\
+\
+    /* Contact */\
+    .contact-grid \{\
+      display: grid;\
+      gap: 1.75rem;\
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);\
+    \}\
+\
+    .contact-list \{\
+      list-style: none;\
+      font-size: 0.9rem;\
+    \}\
+\
+    .contact-list li \{\
+      margin-bottom: 0.5rem;\
+    \}\
+\
+    .contact-list span \{\
+      opacity: 0.6;\
+      font-size: 0.8rem;\
+      margin-right: 0.3rem;\
+      text-transform: uppercase;\
+      letter-spacing: 0.1em;\
+    \}\
+\
+    .contact-form \{\
+      display: grid;\
+      gap: 0.7rem;\
+    \}\
+\
+    .contact-form input,\
+    .contact-form textarea \{\
+      width: 100%;\
+      padding: 0.7rem 0.9rem;\
+      border-radius: 10px;\
+      border: 1px solid rgba(255, 255, 255, 0.18);\
+      background: #050505;\
+      color: #f5f5f5;\
+      font-size: 0.85rem;\
+    \}\
+\
+    .contact-form textarea \{\
+      resize: vertical;\
+      min-height: 120px;\
+    \}\
+\
+    footer \{\
+      border-top: 1px solid rgba(255, 255, 255, 0.08);\
+      padding: 1.2rem 1.5rem 2rem;\
+      font-size: 0.75rem;\
+      opacity: 0.7;\
+      text-align: center;\
+    \}\
+\
+    @media (max-width: 800px) \{\
+      .hero \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      .about-layout,\
+      .contact-grid \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      header \{\
+        position: static;\
+      \}\
+\
+      main \{\
+        margin-top: 0;\
+      \}\
+\
+      .nav \{\
+        padding: 0.8rem 1rem;\
+      \}\
+\
+      .nav-links \{\
+        display: none; /* keep it simple for mobile; can add burger menu later */\
+      \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <header>\
+    <nav class="nav">\
+      <div class="logo">WM FILMS <span>by William Mvutu</span></div>\
+      <div class="nav-links">\
+        <a href="#work">Work</a>\
+        <a href="#stills">Stills</a>\
+        <a href="#about">About</a>\
+        <a href="#contact">Contact</a>\
+      </div>\
+    </nav>\
+  </header>\
+\
+  <main>\
+    <!-- HERO -->\
+    <section class="hero" id="top">\
+      <div class="hero-text">\
+        <div class="hero-subtitle">Director \'95 Cinematographer \'95 Colorist</div>\
+        <h1>Visually-driven stories from Charlotte to the world.</h1>\
+        <p>\
+          I\'92m William Mvutu, a filmmaker and colorist crafting narrative, commercial,\
+          and documentary work with a bold, cinematic look.\
+        </p>\
+\
+        <div class="hero-tags">\
+          <span class="tag">Narrative</span>\
+          <span class="tag">Commercials</span>\
+          <span class="tag">Music Videos</span>\
+          <span class="tag">Color Grading</span>\
+        </div>\
+\
+        <div class="hero-buttons">\
+          <a href="#work" class="btn btn-primary">Watch my work</a>\
+          <a href="#contact" class="btn">Book a project \uc0\u8594 </a>\
+        </div>\
+      </div>\
+\
+      <div class="hero-media">\
+        <div class="hero-media-inner">\
+          <!-- Replace this with an actual embedded thumbnail or <video> -->\
+          <span>Featured Reel Placeholder (replace with your thumbnail)</span>\
+          <div class="play-badge">\
+            <div class="play-circle">\
+              <div class="play-triangle"></div>\
+            </div>\
+          </div>\
+          <div class="hero-caption">\
+            2025 Director's Reel \'96 WM Films\
+          </div>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <!-- WORK / PROJECTS -->\
+    <section id="work">\
+      <div class="eyebrow">Selected work</div>\
+      <h2>Narrative & Commercial projects</h2>\
+      <p>\
+        A small selection of recent work. Replace these with your own titles, roles, and links\
+        (YouTube, Vimeo, or private links for clients).\
+      </p>\
+\
+      <div class="projects-grid">\
+        <article class="project-card">\
+          <div class="project-thumb">\
+            <!-- You can replace the whole div with <img src="..." alt=""> -->\
+            Narrative Short \'96 Thumbnail\
+          </div>\
+          <div class="project-body">\
+            <div class="project-meta">Narrative \'95 Director & Color</div>\
+            <div class="project-title">\'93Routine\'94 \'96 Short Film</div>\
+            <p>\
+              Intimate portrait of daily life, exploring time, rhythm, and mental space.\
+            </p>\
+          </div>\
+        </article>\
+\
+        <article class="project-card">\
+          <div class="project-thumb">\
+            Commercial Spot \'96 Thumbnail\
+          </div>\
+          <div class="project-body">\
+            <div class="project-meta">Commercial \'95 Cinematography</div>\
+            <div class="project-title">Brand Film \'96 Local Business</div>\
+            <p>\
+              High-energy commercial combining dynamic camera moves with bold color contrast.\
+            </p>\
+          </div>\
+        </article>\
+\
+        <article class="project-card">\
+          <div class="project-thumb">\
+            Music Video \'96 Thumbnail\
+          </div>\
+          <div class="project-body">\
+            <div class="project-meta">Music Video \'95 Colorist</div>\
+            <div class="project-title">\'93City Lights\'94 \'96 Music Visual</div>\
+            <p>\
+              Stylized grading focusing on neon tones and strong contrast for streaming platforms.\
+            </p>\
+          </div>\
+        </article>\
+\
+        <article class="project-card">\
+          <div class="project-thumb">\
+            Documentary \'96 Thumbnail\
+          </div>\
+          <div class="project-body">\
+            <div class="project-meta">Documentary \'95 DP</div>\
+            <div class="project-title">Immigrant Stories \'96 Doc Series</div>\
+            <p>\
+              Documentary portrait capturing resilience and identity, shot across Charlotte.\
+            </p>\
+          </div>\
+        </article>\
+      </div>\
+    </section>\
+\
+    <!-- STILLS -->\
+    <section id="stills">\
+      <div class="eyebrow">Frames & Photography</div>\
+      <h2>Stills</h2>\
+      <p>\
+        A grid of selected frames and photographs. Replace each box with real stills\
+        exported from your projects.\
+      </p>\
+\
+      <div class="stills-grid">\
+        <div class="still">Still 01</div>\
+        <div class="still">Still 02</div>\
+        <div class="still">Still 03</div>\
+        <div class="still">Still 04</div>\
+        <div class="still">Still 05</div>\
+        <div class="still">Still 06</div>\
+      </div>\
+    </section>\
+\
+    <!-- CTA / NEWSLETTER -->\
+    <section>\
+      <div class="cta">\
+        <div class="cta-row">\
+          <div>\
+            <div class="eyebrow">Let\'92s do it together</div>\
+            <h2>Stay in the loop with new films and BTS breakdowns.</h2>\
+            <p>\
+              I occasionally send updates about new work, color grading breakdowns,\
+              and behind-the-scenes from sets. Drop your email if you\'92d like to hear from me.\
+            </p>\
+          </div>\
+          <form class="cta-form">\
+            <!-- This doesn't actually submit anywhere yet; needs backend / email service -->\
+            <input type="email" placeholder="your@email.com" />\
+            <button class="btn btn-primary" type="button">Subscribe</button>\
+          </form>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <!-- ABOUT -->\
+    <section id="about">\
+      <div class="eyebrow">About</div>\
+      <div class="about-layout">\
+        <div>\
+          <h2>Filmmaker, colorist and electrical engineering student.</h2>\
+          <p>\
+            I\'92m William, a filmmaker and colorist based in Charlotte, NC. I focus on narrative\
+            storytelling, emotional lighting, and rich, cinematic color.\
+          </p>\
+          <p style="margin-top: 0.9rem;">\
+            With a background in electrical engineering, I love the technical side of cameras,\
+            color pipelines, and workflows just as much as the creative side. Whether it\'92s\
+            a short film, a commercial, or a documentary interview, my goal is to make images\
+            that feel honest and intentional.\
+          </p>\
+        </div>\
+        <div class="about-aside">\
+          <p><strong>Selected skills</strong></p>\
+          <p>\
+            \'95 Blackmagic Pocket 4K<br />\
+            \'95 DaVinci Resolve Studio \'96 Editing & Color<br />\
+            \'95 Camera & lighting for interviews<br />\
+            \'95 Narrative and commercial storytelling<br />\
+            \'95 Look development & LUT creation\
+          </p>\
+        </div>\
+      </div>\
+    </section>\
+\
+    <!-- CONTACT -->\
+    <section id="contact">\
+      <div class="eyebrow">Contact</div>\
+      <h2>Have a project in mind?</h2>\
+      <p>\
+        Reach out with a short description of your project, timeframe, and budget range.\
+        I usually reply within a few days.\
+      </p>\
+\
+      <div class="contact-grid" style="margin-top: 1.5rem;">\
+        <div>\
+          <ul class="contact-list">\
+            <li><span>Email</span> <a href="mailto:williamamvutu@gmail.com">williamamvutu@gmail.com</a></li>\
+            <li><span>Instagram</span> <a href="https://instagram.com" target="_blank">@yourhandle</a></li>\
+            <li><span>Location</span> Charlotte, NC</li>\
+          </ul>\
+        </div>\
+\
+        <form class="contact-form">\
+          <!-- For real handling, connect this to Formspree, Netlify Forms, etc. -->\
+          <input type="text" placeholder="Name" />\
+          <input type="email" placeholder="Email" />\
+          <textarea placeholder="Tell me a bit about your project..."></textarea>\
+          <button type="button" class="btn btn-primary">Send message</button>\
+        </form>\
+      </div>\
+    </section>\
+  </main>\
+\
+  <footer>\
+    \'a9 <span id="year"></span> WM Films \'96 William Mvutu. All rights reserved.\
+  </footer>\
+\
+  <script>\
+    // Just to keep the year updated\
+    document.getElementById("year").textContent = new Date().getFullYear();\
+  </script>\
+</body>\
+</html>}
