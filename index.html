@@ -1,1326 +1,822 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>William Mvutu Colorist | WM Films</title>
 
   <meta
-
     name="description"
-
-    content="Color grading and finishing for narrative, documentary, music videos, and commercials. Remote workflow. Fast turnarounds. WM Films."
-
+    content="Color grading and finishing for short films, documentaries, music videos, and commercials. Remote workflow. Fast turnarounds. WM Films."
   />
 
   <meta name="theme-color" content="#0b0b0f" />
 
   <style>
-
     :root{
-
       --bg:#0b0b0f;
-
       --panel:#12121a;
-
       --text:#f2f2f6;
-
       --muted:#b7b7c6;
-
       --line:rgba(255,255,255,.10);
-
       --brand:#8b5cf6;
-
       --brand2:#22c55e;
-
       --shadow:0 18px 60px rgba(0,0,0,.45);
-
       --radius:18px;
-
       --max:1100px;
-
     }
 
     *{
-
       box-sizing:border-box;
-
     }
 
     html{
-
       scroll-behavior:smooth;
-
     }
 
     html,
-
     body{
-
       min-height:100%;
-
     }
 
     body{
-
       margin:0;
-
       font-family:
-
         ui-sans-serif,
-
         system-ui,
-
         -apple-system,
-
         BlinkMacSystemFont,
-
         "Segoe UI",
-
         Roboto,
-
         Helvetica,
-
         Arial,
-
         sans-serif;
 
       background:
-
         radial-gradient(
-
           1200px 600px at 20% 0%,
-
           rgba(139,92,246,.18),
-
           transparent 60%
-
         ),
-
         radial-gradient(
-
           900px 520px at 90% 10%,
-
           rgba(34,197,94,.12),
-
           transparent 55%
-
         ),
-
         var(--bg);
 
       color:var(--text);
-
       line-height:1.5;
-
     }
 
     a{
-
       color:inherit;
-
       text-decoration:none;
-
-    }
-
-    button,
-
-    input,
-
-    textarea{
-
-      font:inherit;
-
     }
 
     img{
-
       max-width:100%;
+    }
 
+    button,
+    input,
+    textarea{
+      font:inherit;
     }
 
     .wrap{
-
       width:100%;
-
       max-width:var(--max);
-
       margin:0 auto;
-
       padding:24px;
-
     }
 
     /* NAVIGATION */
 
     .nav{
-
       position:sticky;
-
       top:0;
-
       z-index:50;
-
       backdrop-filter:blur(14px);
-
       -webkit-backdrop-filter:blur(14px);
-
       background:rgba(11,11,15,.72);
-
       border-bottom:1px solid var(--line);
-
     }
 
     .nav-inner{
-
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
-
       gap:16px;
-
     }
 
     .brand{
-
       display:flex;
-
       align-items:center;
-
       gap:10px;
-
       font-weight:700;
-
       letter-spacing:.2px;
-
       white-space:nowrap;
-
     }
 
     .dot{
-
       width:10px;
-
       height:10px;
-
       border-radius:999px;
-
       flex-shrink:0;
-
       background:linear-gradient(
-
         135deg,
-
         var(--brand),
-
         var(--brand2)
-
       );
-
     }
 
     .menu{
-
       display:flex;
-
       align-items:center;
-
       justify-content:flex-end;
-
       gap:8px;
-
       flex-wrap:wrap;
-
     }
 
     .menu a{
-
       font-size:14px;
-
       color:var(--muted);
-
       padding:8px 10px;
-
       border-radius:12px;
-
     }
 
     .menu a:hover{
-
       color:var(--text);
-
       background:rgba(255,255,255,.06);
-
     }
 
     /* BUTTONS */
 
     .btn{
-
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
-
       gap:10px;
-
       padding:12px 14px;
-
       border-radius:14px;
-
       border:1px solid rgba(255,255,255,.12);
-
       background:linear-gradient(
-
         135deg,
-
         rgba(139,92,246,.95),
-
         rgba(34,197,94,.80)
-
       );
-
       color:#0b0b0f;
-
       font-weight:700;
-
       box-shadow:0 10px 30px rgba(139,92,246,.18);
-
       cursor:pointer;
-
     }
 
     .btn:hover{
-
       transform:translateY(-1px);
-
     }
 
     .btn.secondary{
-
       background:rgba(255,255,255,.06);
-
       color:var(--text);
-
       box-shadow:none;
-
     }
 
     .btn.secondary:hover{
-
       background:rgba(255,255,255,.10);
-
     }
 
     /* HERO */
 
     .hero{
-
       padding:56px 0 26px;
-
       display:grid;
-
       grid-template-columns:1.25fr .75fr;
-
       gap:22px;
-
       align-items:stretch;
-
     }
 
     .card{
-
       background:rgba(18,18,26,.75);
-
       border:1px solid var(--line);
-
       border-radius:var(--radius);
-
       box-shadow:var(--shadow);
-
     }
 
     .hero-left{
-
       padding:22px;
-
     }
 
     h1{
-
       margin:0 0 10px;
-
       font-size:44px;
-
       line-height:1.05;
-
       letter-spacing:-.8px;
-
     }
 
     .sub{
-
       color:var(--muted);
-
       font-size:16px;
-
       max-width:60ch;
-
     }
 
     .cta{
-
       display:flex;
-
       gap:12px;
-
       flex-wrap:wrap;
-
       margin-top:18px;
-
     }
 
     .chips{
-
       display:flex;
-
       gap:10px;
-
       flex-wrap:wrap;
-
       margin-top:16px;
-
     }
 
     .chip{
-
       font-size:12px;
-
       color:var(--muted);
-
       padding:8px 10px;
-
       border-radius:999px;
-
       border:1px solid var(--line);
-
       background:rgba(255,255,255,.04);
-
     }
 
     .hero-right{
-
       padding:18px;
-
       display:flex;
-
       flex-direction:column;
-
       gap:12px;
-
     }
 
     .stat{
-
       padding:14px;
-
       border-radius:16px;
-
       border:1px solid var(--line);
-
       background:rgba(255,255,255,.04);
-
     }
 
     .stat b{
-
       display:block;
-
       font-size:18px;
-
     }
 
     .stat span{
-
       color:var(--muted);
-
       font-size:13px;
-
     }
 
-    /* GENERAL SECTIONS */
+    /* GENERAL */
 
     .section{
-
       padding:18px 0;
-
       scroll-margin-top:90px;
-
     }
 
     .section h2{
-
       margin:0 0 10px;
-
       font-size:20px;
-
     }
 
     .muted{
-
       color:var(--muted);
-
     }
 
     .grid{
-
       display:grid;
-
-      grid-template-columns:repeat(12, minmax(0, 1fr));
-
+      grid-template-columns:repeat(12, minmax(0,1fr));
       gap:14px;
-
     }
 
     .col-4{
-
       grid-column:span 4;
-
     }
 
     .col-6{
-
       grid-column:span 6;
-
     }
 
     .col-8{
-
       grid-column:span 8;
-
     }
 
     .col-12{
-
       grid-column:span 12;
-
     }
 
     .panel{
-
       padding:16px;
-
     }
 
-    /* EXPANDABLE PROJECTS */
+    /* =========================
+       SELECTED WORK
+    ========================= */
 
-    .project{
-
-      min-width:0;
-
+    .project-categories{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:18px;
     }
 
-    .project.col-6{
-
-      grid-column:span 6;
-
-    }
-
-    .project.col-4{
-
-      grid-column:span 4;
-
-    }
-
-    .project summary{
-
-      list-style:none;
-
-      cursor:pointer;
-
-      outline:none;
-
-    }
-
-    .project summary::-webkit-details-marker{
-
-      display:none;
-
-    }
-
-    .project summary::marker{
-
-      display:none;
-
-    }
-
-    .work-card{
-
-      height:320px;
-
+    .category{
       overflow:hidden;
-
-      position:relative;
-
+      border:1px solid var(--line);
       border-radius:var(--radius);
-
-      border:1px solid var(--line);
-
-      background:linear-gradient(
-
-        180deg,
-
-        rgba(255,255,255,.08),
-
-        rgba(255,255,255,.02)
-
-      );
-
-      transition:
-
-        border-color .3s ease,
-
-        transform .3s ease;
-
+      background:rgba(18,18,26,.78);
+      box-shadow:0 10px 35px rgba(0,0,0,.18);
     }
 
-    .project.col-4 .work-card{
-
-      height:260px;
-
+    .category summary{
+      list-style:none;
     }
 
-    .work-card:hover{
-
-      transform:translateY(-2px);
-
-      border-color:rgba(255,255,255,.22);
-
+    .category summary::-webkit-details-marker{
+      display:none;
     }
 
-    .work-card img{
-
-      width:100%;
-
-      height:100%;
-
-      object-fit:cover;
-
-      opacity:.92;
-
-      transform:scale(1.02);
-
-      transition:
-
-        transform .5s ease,
-
-        opacity .5s ease;
-
-      display:block;
-
-    }
-
-    .work-card:hover img{
-
-      transform:scale(1.06);
-
-      opacity:1;
-
-    }
-
-    .project[open] .work-card{
-
-      border-color:rgba(139,92,246,.65);
-
-    }
-
-    .work-meta{
-
-      position:absolute;
-
-      left:14px;
-
-      right:14px;
-
-      bottom:14px;
-
-      padding:12px;
-
-      border-radius:16px;
-
-      background:rgba(11,11,15,.72);
-
-      border:1px solid rgba(255,255,255,.14);
-
-      backdrop-filter:blur(10px);
-
-      -webkit-backdrop-filter:blur(10px);
-
+    .category-title{
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
-
-      gap:12px;
-
+      gap:20px;
+      padding:20px;
+      cursor:pointer;
+      transition:background .25s ease;
     }
 
-    .work-meta b{
-
-      font-size:14px;
-
-    }
-
-    .work-meta span{
-
-      font-size:12px;
-
-      color:var(--muted);
-
-    }
-
-    .tag{
-
-      flex-shrink:0;
-
-      font-size:12px;
-
-      padding:6px 10px;
-
-      border-radius:999px;
-
-      border:1px solid var(--line);
-
+    .category-title:hover{
       background:rgba(255,255,255,.04);
-
-      transition:.3s ease;
-
     }
 
-    .project[open] .tag{
-
-      color:var(--text);
-
-      border-color:rgba(139,92,246,.55);
-
-      background:rgba(139,92,246,.18);
-
-    }
-
-    .open-label{
-
-      display:inline;
-
-    }
-
-    .close-label{
-
-      display:none;
-
-    }
-
-    .project[open] .open-label{
-
-      display:none;
-
-    }
-
-    .project[open] .close-label{
-
-      display:inline;
-
-    }
-
-    .stills-dropdown{
-
-      margin-top:12px;
-
-      padding:14px;
-
-      border-radius:var(--radius);
-
-      border:1px solid var(--line);
-
-      background:rgba(18,18,26,.92);
-
-      box-shadow:var(--shadow);
-
-      animation:dropdownOpen .35s ease;
-
-    }
-
-    .stills-header{
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:12px;
-
-      margin-bottom:12px;
-
-    }
-
-    .stills-header b{
-
-      font-size:14px;
-
-    }
-
-    .stills-header span{
-
-      color:var(--muted);
-
-      font-size:12px;
-
-    }
-
-    .stills-grid{
-
-      display:grid;
-
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-
-      gap:10px;
-
-    }
-
-    .stills-grid img{
-
-      width:100%;
-
-      aspect-ratio:16 / 9;
-
-      object-fit:cover;
-
+    .category-title b{
       display:block;
+      font-size:18px;
+    }
 
-      border-radius:14px;
+    .category-title div span{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:13px;
+    }
 
+    .category-arrow{
+      width:36px;
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      border-radius:999px;
       border:1px solid var(--line);
-
-      background:#0b0b0f;
-
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-size:21px;
+      line-height:1;
       transition:
-
-        transform .25s ease,
-
-        border-color .25s ease;
-
+        transform .3s ease,
+        background .3s ease;
     }
 
-    .stills-grid img:hover{
-
-      transform:scale(1.015);
-
-      border-color:rgba(255,255,255,.25);
-
+    .category[open] > .category-title .category-arrow{
+      transform:rotate(45deg);
+      background:rgba(139,92,246,.16);
     }
 
-    @keyframes dropdownOpen{
+    .category-content{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:0 14px 14px;
+      animation:categoryOpen .3s ease;
+    }
 
+    @keyframes categoryOpen{
       from{
-
         opacity:0;
-
-        transform:translateY(-8px);
-
+        transform:translateY(-6px);
       }
 
       to{
-
         opacity:1;
-
         transform:translateY(0);
-
       }
-
     }
 
-    /* BEFORE AND AFTER */
+    /* INDIVIDUAL PROJECT */
+
+    .sub-project{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .sub-project summary{
+      list-style:none;
+    }
+
+    .sub-project summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .sub-project-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+      padding:16px;
+      cursor:pointer;
+      transition:background .25s ease;
+    }
+
+    .sub-project-title:hover{
+      background:rgba(255,255,255,.05);
+    }
+
+    .sub-project-title b{
+      display:block;
+      font-size:15px;
+    }
+
+    .sub-project-title div span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+    }
+
+    .tag{
+      flex-shrink:0;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+    }
+
+    .sub-project[open] .tag{
+      color:var(--text);
+      background:rgba(139,92,246,.18);
+      border-color:rgba(139,92,246,.55);
+    }
+
+    .open-project-label{
+      display:inline;
+    }
+
+    .close-project-label{
+      display:none;
+    }
+
+    .sub-project[open] .open-project-label{
+      display:none;
+    }
+
+    .sub-project[open] .close-project-label{
+      display:inline;
+    }
+
+    /* PROJECT STILLS */
+
+    .project-stills{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      padding:0 16px 16px;
+      animation:stillsOpen .3s ease;
+    }
+
+    .project-stills img{
+      width:100%;
+      aspect-ratio:16 / 9;
+      object-fit:cover;
+      display:block;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0b0b0f;
+      transition:
+        transform .25s ease,
+        border-color .25s ease;
+    }
+
+    .project-stills img:hover{
+      transform:scale(1.015);
+      border-color:rgba(255,255,255,.25);
+    }
+
+    @keyframes stillsOpen{
+      from{
+        opacity:0;
+        transform:translateY(-5px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* BEFORE AFTER */
 
     .ba{
-
       position:relative;
-
       overflow:hidden;
-
       border-radius:var(--radius);
-
       border:1px solid var(--line);
-
       background:#0b0b0f;
-
       min-height:320px;
-
       aspect-ratio:16 / 9;
-
     }
 
     .ba img{
-
       width:100%;
-
       height:100%;
-
       object-fit:cover;
-
       display:block;
-
     }
 
     .ba .after{
-
       position:absolute;
-
       inset:0;
-
       clip-path:inset(0 50% 0 0);
-
     }
 
     .ba .handle{
-
       position:absolute;
-
       top:0;
-
       bottom:0;
-
       left:50%;
-
       width:2px;
-
       background:rgba(255,255,255,.85);
-
       box-shadow:0 0 0 10px rgba(255,255,255,.06);
-
       pointer-events:none;
-
     }
 
     .ba .knob{
-
       position:absolute;
-
       left:50%;
-
       top:50%;
-
       transform:translate(-50%,-50%);
-
       width:44px;
-
       height:44px;
-
       border-radius:999px;
-
       background:rgba(11,11,15,.85);
-
       border:1px solid rgba(255,255,255,.22);
-
       display:flex;
-
       align-items:center;
-
       justify-content:center;
-
       gap:6px;
-
       color:var(--text);
-
       backdrop-filter:blur(10px);
-
       -webkit-backdrop-filter:blur(10px);
-
       pointer-events:none;
-
-    }
-
-    .ba .knob svg{
-
-      opacity:.9;
-
     }
 
     .ba input[type="range"]{
-
       position:absolute;
-
       inset:0;
-
       z-index:5;
-
       width:100%;
-
       height:100%;
-
       opacity:0;
-
       cursor:ew-resize;
-
     }
 
     /* SERVICES */
 
     .service{
-
       padding:14px;
-
       border-radius:16px;
-
       border:1px solid var(--line);
-
       background:rgba(255,255,255,.04);
-
       min-height:140px;
-
     }
 
     .service b{
-
       display:block;
-
       margin-bottom:4px;
-
     }
 
     .service small{
-
       color:var(--muted);
-
     }
 
     /* CONTACT */
 
     .cols{
-
       display:flex;
-
       gap:12px;
-
       flex-wrap:wrap;
-
     }
 
     .two{
-
       display:grid;
-
       grid-template-columns:1fr 1fr;
-
       gap:14px;
-
     }
 
     .input{
-
       width:100%;
-
       padding:12px;
-
       border-radius:14px;
-
       border:1px solid var(--line);
-
       background:rgba(255,255,255,.04);
-
       color:var(--text);
-
       outline:none;
-
     }
 
     .input:focus{
-
       border-color:rgba(139,92,246,.75);
-
       box-shadow:0 0 0 3px rgba(139,92,246,.12);
-
     }
 
     textarea.input{
-
       min-height:120px;
-
       resize:vertical;
-
     }
 
     .note{
-
       font-size:12px;
-
       color:var(--muted);
-
     }
 
     /* FOOTER */
 
     .footer{
-
       padding:26px 0 42px;
-
       color:var(--muted);
-
       border-top:1px solid var(--line);
-
       margin-top:22px;
-
     }
 
     /* TABLET */
 
     @media (max-width:920px){
-
       .hero{
-
         grid-template-columns:1fr;
-
         padding-top:34px;
-
       }
 
       h1{
-
         font-size:38px;
-
       }
 
       .col-4,
-
       .col-6,
-
-      .col-8,
-
-      .project.col-4,
-
-      .project.col-6{
-
+      .col-8{
         grid-column:span 12;
-
-      }
-
-      .project.col-4 .work-card,
-
-      .project.col-6 .work-card{
-
-        height:300px;
-
       }
 
       .two{
-
         grid-template-columns:1fr;
-
       }
-
     }
 
     /* MOBILE */
 
     @media (max-width:680px){
-
       .wrap{
-
         padding:18px;
-
       }
 
       .nav-inner{
-
         align-items:flex-start;
-
         flex-direction:column;
-
       }
 
       .menu{
-
         width:100%;
-
         justify-content:flex-start;
-
         gap:4px;
-
       }
 
       .menu a{
-
         font-size:13px;
-
         padding:7px 8px;
-
       }
 
       .hero{
-
         padding-top:28px;
-
       }
 
       h1{
-
         font-size:34px;
-
       }
 
-      .project.col-4 .work-card,
-
-      .project.col-6 .work-card{
-
-        height:240px;
-
+      .category-title{
+        padding:16px;
       }
 
-      .work-meta{
-
-        left:10px;
-
-        right:10px;
-
-        bottom:10px;
-
-        padding:10px;
-
+      .category-title b{
+        font-size:16px;
       }
 
-      .stills-grid{
+      .category-title div span{
+        font-size:12px;
+      }
 
+      .sub-project-title{
+        padding:14px;
+      }
+
+      .project-stills{
         grid-template-columns:1fr;
-
-      }
-
-      .stills-header{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-        gap:2px;
-
+        padding:0 14px 14px;
       }
 
       .ba{
-
         min-height:230px;
-
       }
-
     }
-
   </style>
-
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
-
   <nav class="nav">
-
     <div class="wrap nav-inner">
 
       <a class="brand" href="#top" aria-label="Home">
-
         <span class="dot"></span>
-
         <span>WM Films Colorist</span>
-
       </a>
 
       <div class="menu" aria-label="Main navigation">
-
         <a href="#work">Work</a>
-
         <a href="#before-after">Before &amp; After</a>
-
         <a href="#services">Services</a>
-
         <a href="#about">About</a>
-
         <a href="#contact" class="btn secondary">Contact</a>
-
       </div>
 
     </div>
-
   </nav>
 
   <main id="top" class="wrap">
 
     <!-- HERO -->
-
     <section class="hero">
 
       <div class="card hero-left">
 
-        <h1>Color grading that makes your story feel expensive.</h1>
+        <h1>
+          Color grading that makes your story feel expensive.
+        </h1>
 
         <p class="sub">
-
           I help filmmakers and brands get cinematic, consistent color,
-
           from cleanup to final deliverables. Remote workflow, fast
-
           communication, and clean results.
-
         </p>
 
         <div class="cta">
 
           <a
-
             class="btn"
-
             href="https://www.instagram.com/williammvutu"
-
             target="_blank"
-
             rel="noreferrer"
-
           >
-
             Watch Reel
-
           </a>
 
           <a class="btn secondary" href="#before-after">
-
             See Before &amp; After
-
           </a>
 
           <a class="btn secondary" href="#contact">
-
             Book Inquiry
-
           </a>
 
         </div>
 
         <div class="chips" aria-label="Quick facts">
 
-          <span class="chip">DaVinci Resolve</span>
+          <span class="chip">
+            DaVinci Resolve
+          </span>
 
-          <span class="chip">Log to Rec.709 and HDR</span>
+          <span class="chip">
+            Log to Rec.709 and HDR
+          </span>
 
-          <span class="chip">Noise reduction</span>
+          <span class="chip">
+            Noise reduction
+          </span>
 
-          <span class="chip">Skin tone consistency</span>
+          <span class="chip">
+            Skin tone consistency
+          </span>
 
-          <span class="chip">Remote sessions</span>
+          <span class="chip">
+            Remote sessions
+          </span>
 
         </div>
 
@@ -1329,304 +825,390 @@
       <aside class="card hero-right" aria-label="Highlights">
 
         <div class="stat">
-
           <b>24 to 72-hour turnaround</b>
-
-          <span>Depending on project scope. Rush service available.</span>
-
+          <span>
+            Depending on project scope. Rush service available.
+          </span>
         </div>
 
         <div class="stat">
-
           <b>Remote workflow</b>
-
-          <span>Frame.io, Google Drive, and live review sessions.</span>
-
+          <span>
+            Frame.io, Google Drive, and live review sessions.
+          </span>
         </div>
 
         <div class="stat">
-
           <b>Professional deliverables</b>
-
-          <span>ProRes, H.264, and delivery guidance.</span>
-
+          <span>
+            ProRes, H.264, and delivery guidance.
+          </span>
         </div>
 
       </aside>
 
     </section>
-<!-- SELECTED WORK -->
-<section id="work" class="section">
 
-  <h2>Selected Work</h2>
+    <!-- SELECTED WORK -->
+    <section id="work" class="section">
 
-  <p class="muted">
-    Select a category, then choose a project to view stills.
-  </p>
+      <h2>Selected Work</h2>
 
-  <div class="project-categories">
+      <p class="muted">
+        Choose a category, then select a project to view stills.
+      </p>
 
-    <!-- SHORT FILMS -->
-    <details class="category">
+      <div class="project-categories">
 
-      <summary class="category-title">
-        <div>
-          <b>Short Films</b>
-          <span>Cinematic narrative work</span>
-        </div>
+        <!-- =====================================
+             SHORT FILMS
+        ====================================== -->
 
-        <span class="category-arrow">+</span>
-      </summary>
+        <details class="category">
 
-      <div class="category-content">
-
-        <!-- MUNTU -->
-        <details class="sub-project">
-
-          <summary class="sub-project-title">
-            <div>
-              <b>Muntu</b>
-              <span>Short Film</span>
-            </div>
-
-            <span class="tag">
-              View stills
-            </span>
-          </summary>
-
-          <div class="project-stills">
-
-            <img
-              src="still01.jpg"
-              alt="Muntu still 1"
-              loading="lazy"
-            />
-
-            <img
-              src="still02.jpg"
-              alt="Muntu still 2"
-              loading="lazy"
-            />
-
-            <img
-              src="still04.jpg"
-              alt="Muntu still 3"
-              loading="lazy"
-            />
-
-            <img
-              src="still05.jpg"
-              alt="Muntu still 4"
-              loading="lazy"
-            />
-
-          </div>
-
-        </details>
-
-
-        <!-- ADD ANOTHER SHORT FILM LIKE THIS LATER
-
-        <details class="sub-project">
-
-          <summary class="sub-project-title">
-            <div>
-              <b>Another Film</b>
-              <span>Short Film</span>
-            </div>
-
-            <span class="tag">View stills</span>
-          </summary>
-
-          <div class="project-stills">
-
-            <img src="still07.jpg" alt="Still 1">
-            <img src="still08.jpg" alt="Still 2">
-
-          </div>
-
-        </details>
-
-        -->
-
-      </div>
-
-    </details>
-
-
-    <!-- MUSIC VIDEOS -->
-    <details class="category">
-
-      <summary class="category-title">
-
-        <div>
-          <b>Music Videos</b>
-          <span>Stylized music video work</span>
-        </div>
-
-        <span class="category-arrow">+</span>
-
-      </summary>
-
-      <div class="category-content">
-
-        <!-- MUSIC VIDEO PROJECT -->
-        <details class="sub-project">
-
-          <summary class="sub-project-title">
+          <summary class="category-title">
 
             <div>
-              <b>Music Video Project</b>
-              <span>Music Video</span>
+              <b>Short Films</b>
+              <span>
+                Cinematic short film work
+              </span>
             </div>
 
-            <span class="tag">
-              View stills
+            <span class="category-arrow">
+              +
             </span>
 
           </summary>
 
-          <div class="project-stills">
+          <div class="category-content">
 
-            <img
-              src="still04.jpg"
-              alt="Music video still 1"
-              loading="lazy"
-            />
+            <!-- MUNTU -->
 
-            <img
-              src="still05.jpg"
-              alt="Music video still 2"
-              loading="lazy"
-            />
+            <details class="sub-project">
 
-            <img
-              src="still06.jpg"
-              alt="Music video still 3"
-              loading="lazy"
-            />
+              <summary class="sub-project-title">
+
+                <div>
+                  <b>Muntu</b>
+                  <span>Short Film</span>
+                </div>
+
+                <span class="tag">
+
+                  <span class="open-project-label">
+                    View stills
+                  </span>
+
+                  <span class="close-project-label">
+                    Close
+                  </span>
+
+                </span>
+
+              </summary>
+
+              <div class="project-stills">
+
+                <img
+                  src="still01.jpg"
+                  alt="Muntu still 1"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still02.jpg"
+                  alt="Muntu still 2"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still04.jpg"
+                  alt="Muntu still 3"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still05.jpg"
+                  alt="Muntu still 4"
+                  loading="lazy"
+                />
+
+              </div>
+
+            </details>
+
+            <!--
+            COPY THIS SECTION WHEN YOU ADD ANOTHER SHORT FILM
+
+            <details class="sub-project">
+
+              <summary class="sub-project-title">
+
+                <div>
+                  <b>Another Short Film</b>
+                  <span>Short Film</span>
+                </div>
+
+                <span class="tag">
+
+                  <span class="open-project-label">
+                    View stills
+                  </span>
+
+                  <span class="close-project-label">
+                    Close
+                  </span>
+
+                </span>
+
+              </summary>
+
+              <div class="project-stills">
+
+                <img src="still07.jpg" alt="Still 1" />
+
+                <img src="still08.jpg" alt="Still 2" />
+
+                <img src="still09.jpg" alt="Still 3" />
+
+                <img src="still10.jpg" alt="Still 4" />
+
+              </div>
+
+            </details>
+            -->
 
           </div>
 
         </details>
 
-      </div>
 
-    </details>
+        <!-- =====================================
+             MUSIC VIDEOS
+        ====================================== -->
 
+        <details class="category">
 
-    <!-- COMMERCIALS -->
-    <details class="category">
-
-      <summary class="category-title">
-
-        <div>
-          <b>Commercials</b>
-          <span>Brand and commercial work</span>
-        </div>
-
-        <span class="category-arrow">+</span>
-
-      </summary>
-
-      <div class="category-content">
-
-        <!-- COMMERCIAL PROJECT -->
-        <details class="sub-project">
-
-          <summary class="sub-project-title">
+          <summary class="category-title">
 
             <div>
-              <b>Commercial Project</b>
-              <span>Commercial</span>
+              <b>Music Videos</b>
+              <span>
+                Stylized music video work
+              </span>
             </div>
 
-            <span class="tag">
-              View stills
+            <span class="category-arrow">
+              +
             </span>
 
           </summary>
 
-          <div class="project-stills">
+          <div class="category-content">
 
-            <img
-              src="still06.jpg"
-              alt="Commercial still 1"
-              loading="lazy"
-            />
+            <!-- MUSIC VIDEO PROJECT -->
 
-            <img
-              src="still05.jpg"
-              alt="Commercial still 2"
-              loading="lazy"
-            />
+            <details class="sub-project">
 
-            <img
-              src="still04.jpg"
-              alt="Commercial still 3"
-              loading="lazy"
-            />
+              <summary class="sub-project-title">
+
+                <div>
+                  <b>Music Video Project</b>
+                  <span>Music Video</span>
+                </div>
+
+                <span class="tag">
+
+                  <span class="open-project-label">
+                    View stills
+                  </span>
+
+                  <span class="close-project-label">
+                    Close
+                  </span>
+
+                </span>
+
+              </summary>
+
+              <div class="project-stills">
+
+                <img
+                  src="still04.jpg"
+                  alt="Music video still 1"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still05.jpg"
+                  alt="Music video still 2"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still06.jpg"
+                  alt="Music video still 3"
+                  loading="lazy"
+                />
+
+              </div>
+
+            </details>
 
           </div>
 
         </details>
 
-      </div>
 
-    </details>
+        <!-- =====================================
+             COMMERCIALS
+        ====================================== -->
 
+        <details class="category">
 
-    <!-- DOCUMENTARIES -->
-    <details class="category">
-
-      <summary class="category-title">
-
-        <div>
-          <b>Documentaries</b>
-          <span>Natural documentary color</span>
-        </div>
-
-        <span class="category-arrow">+</span>
-
-      </summary>
-
-      <div class="category-content">
-
-        <!-- DOCUMENTARY PROJECT -->
-        <details class="sub-project">
-
-          <summary class="sub-project-title">
+          <summary class="category-title">
 
             <div>
-              <b>Documentary Project</b>
-              <span>Documentary</span>
+              <b>Commercials</b>
+              <span>
+                Brand and commercial work
+              </span>
             </div>
 
-            <span class="tag">
-              View stills
+            <span class="category-arrow">
+              +
             </span>
 
           </summary>
 
-          <div class="project-stills">
+          <div class="category-content">
 
-            <img
-              src="still02.jpg"
-              alt="Documentary still 1"
-              loading="lazy"
-            />
+            <!-- COMMERCIAL PROJECT -->
 
-            <img
-              src="still01.jpg"
-              alt="Documentary still 2"
-              loading="lazy"
-            />
+            <details class="sub-project">
 
-            <img
-              src="still04.jpg"
-              alt="Documentary still 3"
-              loading="lazy"
-            />
+              <summary class="sub-project-title">
+
+                <div>
+                  <b>Commercial Project</b>
+                  <span>Commercial</span>
+                </div>
+
+                <span class="tag">
+
+                  <span class="open-project-label">
+                    View stills
+                  </span>
+
+                  <span class="close-project-label">
+                    Close
+                  </span>
+
+                </span>
+
+              </summary>
+
+              <div class="project-stills">
+
+                <img
+                  src="still06.jpg"
+                  alt="Commercial still 1"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still05.jpg"
+                  alt="Commercial still 2"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still04.jpg"
+                  alt="Commercial still 3"
+                  loading="lazy"
+                />
+
+              </div>
+
+            </details>
+
+          </div>
+
+        </details>
+
+
+        <!-- =====================================
+             DOCUMENTARIES
+        ====================================== -->
+
+        <details class="category">
+
+          <summary class="category-title">
+
+            <div>
+              <b>Documentaries</b>
+              <span>
+                Natural documentary color
+              </span>
+            </div>
+
+            <span class="category-arrow">
+              +
+            </span>
+
+          </summary>
+
+          <div class="category-content">
+
+            <!-- DOCUMENTARY PROJECT -->
+
+            <details class="sub-project">
+
+              <summary class="sub-project-title">
+
+                <div>
+                  <b>Documentary Project</b>
+                  <span>Documentary</span>
+                </div>
+
+                <span class="tag">
+
+                  <span class="open-project-label">
+                    View stills
+                  </span>
+
+                  <span class="close-project-label">
+                    Close
+                  </span>
+
+                </span>
+
+              </summary>
+
+              <div class="project-stills">
+
+                <img
+                  src="still02.jpg"
+                  alt="Documentary still 1"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still01.jpg"
+                  alt="Documentary still 2"
+                  loading="lazy"
+                />
+
+                <img
+                  src="still04.jpg"
+                  alt="Documentary still 3"
+                  loading="lazy"
+                />
+
+              </div>
+
+            </details>
 
           </div>
 
@@ -1634,126 +1216,77 @@
 
       </div>
 
-    </details>
-
-  </div>
-
-</section>
+    </section>
 
     <!-- BEFORE AND AFTER -->
-
     <section id="before-after" class="section">
 
       <h2>Before &amp; After</h2>
 
       <p class="muted">
-
         Drag the slider to compare the original image with the final grade.
-
       </p>
 
       <div
-
         class="ba"
-
         role="group"
-
         aria-label="Before and after color grading comparison"
-
       >
 
         <img
-
           src="still01.jpg"
-
           alt="Before color grading"
-
         />
 
         <img
-
           class="after"
-
           id="afterImg"
-
           src="still02.jpg"
-
           alt="After color grading"
-
         />
 
         <div
-
           class="handle"
-
           id="handle"
-
           aria-hidden="true"
-
         ></div>
 
         <div
-
           class="knob"
-
           id="knob"
-
           aria-hidden="true"
-
         >
 
           <svg
-
             width="16"
-
             height="16"
-
             viewBox="0 0 24 24"
-
             fill="none"
-
           >
 
             <path
-
               d="M14 7l-5 5 5 5"
-
               stroke="currentColor"
-
               stroke-width="2"
-
               stroke-linecap="round"
-
               stroke-linejoin="round"
-
             />
 
           </svg>
 
           <svg
-
             width="16"
-
             height="16"
-
             viewBox="0 0 24 24"
-
             fill="none"
-
           >
 
             <path
-
               d="M10 7l5 5-5 5"
-
               stroke="currentColor"
-
               stroke-width="2"
-
               stroke-linecap="round"
-
               stroke-linejoin="round"
-
             />
 
           </svg>
@@ -1761,19 +1294,12 @@
         </div>
 
         <input
-
           id="slider"
-
           type="range"
-
           min="0"
-
           max="100"
-
           value="50"
-
           aria-label="Move the before and after slider"
-
         />
 
       </div>
@@ -1781,7 +1307,6 @@
     </section>
 
     <!-- SERVICES -->
-
     <section id="services" class="section">
 
       <h2>Services</h2>
@@ -1792,14 +1317,13 @@
 
           <div class="service">
 
-            <b>Look Development</b>
+            <b>
+              Look Development
+            </b>
 
             <small>
-
               Custom looks, film emulation, and visual styles matched
-
               to your story, references, and camera.
-
             </small>
 
           </div>
@@ -1810,14 +1334,13 @@
 
           <div class="service">
 
-            <b>Color and Cleanup</b>
+            <b>
+              Color and Cleanup
+            </b>
 
             <small>
-
               Exposure balancing, skin-tone correction, shot matching,
-
               noise reduction, and minor cleanup.
-
             </small>
 
           </div>
@@ -1828,14 +1351,13 @@
 
           <div class="service">
 
-            <b>Finishing Support</b>
+            <b>
+              Finishing Support
+            </b>
 
             <small>
-
               Quality control, export guidance, and consistent
-
               deliverables for online and professional distribution.
-
             </small>
 
           </div>
@@ -1847,7 +1369,6 @@
     </section>
 
     <!-- ABOUT -->
-
     <section id="about" class="section">
 
       <h2>About</h2>
@@ -1859,19 +1380,16 @@
           <p style="margin-top:0">
 
             I’m <b>William Mvutu</b>, a colorist under
+            <b>WM Films</b>.
 
-            <b>WM Films</b>. I focus on cinematic color that feels
-
-            natural, premium, and consistent, whether it is a music
-
+            I focus on cinematic color that feels natural,
+            premium, and consistent, whether it is a music
             video, documentary, short film, or commercial.
 
           </p>
 
           <p class="muted" style="margin-bottom:0">
-
             Based in Charlotte, North Carolina.
-
           </p>
 
         </div>
@@ -1879,43 +1397,27 @@
         <div class="card panel col-4">
 
           <p style="margin:0 0 10px">
-
             <b>Links</b>
-
           </p>
 
           <div class="cols">
 
             <a
-
               class="btn secondary"
-
               href="https://www.instagram.com/williammvutu"
-
               target="_blank"
-
               rel="noreferrer"
-
             >
-
               Instagram
-
             </a>
 
             <a
-
               class="btn secondary"
-
               href="https://www.youtube.com/@WMfilms-Studio"
-
               target="_blank"
-
               rel="noreferrer"
-
             >
-
               YouTube
-
             </a>
 
           </div>
@@ -1927,7 +1429,6 @@
     </section>
 
     <!-- CONTACT -->
-
     <section id="contact" class="section">
 
       <h2>Contact</h2>
@@ -1938,9 +1439,10 @@
 
           <p class="muted" style="margin-top:0">
 
-            Tell me about your project. Include the project type,
+            Tell me about your project.
 
-            runtime, deadline, camera, and visual references.
+            Include the project type, runtime, deadline,
+            camera, and visual references.
 
             I’ll reply with the next steps.
 
@@ -1949,27 +1451,17 @@
           <div class="cols" style="margin-top:12px">
 
             <a
-
               class="btn"
-
               href="mailto:Williammvutu@gmail.com?subject=Color%20Grading%20Inquiry"
-
             >
-
               Email Me
-
             </a>
 
             <a
-
               class="btn secondary"
-
               href="tel:+19809075423"
-
             >
-
               Call or Text
-
             </a>
 
           </div>
@@ -1991,31 +1483,19 @@
             <div class="two">
 
               <input
-
                 class="input"
-
                 id="name"
-
                 type="text"
-
                 placeholder="Name"
-
                 required
-
               />
 
               <input
-
                 class="input"
-
                 id="email"
-
                 type="email"
-
                 placeholder="Email"
-
                 required
-
               />
 
             </div>
@@ -2023,41 +1503,31 @@
             <div style="height:10px"></div>
 
             <input
-
               class="input"
-
               id="subject"
-
               type="text"
-
               placeholder="Subject, for example: Music video color grade"
-
             />
 
             <div style="height:10px"></div>
 
             <textarea
-
               class="input"
-
               id="message"
-
               placeholder="Tell me the project length, deadline, camera, links, and visual references."
-
             ></textarea>
 
             <div style="height:12px"></div>
 
-            <button class="btn" type="submit">
-
+            <button
+              class="btn"
+              type="submit"
+            >
               Send
-
             </button>
 
             <p class="note">
-
               This opens your email application with the message filled in.
-
             </p>
 
           </form>
@@ -2069,10 +1539,10 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer">
 
-      © <span id="year"></span> William Mvutu. All rights reserved.
+      © <span id="year"></span>
+      William Mvutu. All rights reserved.
 
     </footer>
 
@@ -2080,117 +1550,199 @@
 
   <script>
 
-    // Automatically update the copyright year
+    // YEAR
 
     document.getElementById("year").textContent =
-
       new Date().getFullYear();
 
-    // Before and after slider
 
-    const slider = document.getElementById("slider");
+    // BEFORE / AFTER
 
-    const afterImg = document.getElementById("afterImg");
+    const slider =
+      document.getElementById("slider");
 
-    const handle = document.getElementById("handle");
+    const afterImg =
+      document.getElementById("afterImg");
 
-    const knob = document.getElementById("knob");
+    const handle =
+      document.getElementById("handle");
+
+    const knob =
+      document.getElementById("knob");
+
 
     function setBeforeAfter(value){
 
-      const percentage = Math.max(
-
-        0,
-
-        Math.min(100, Number(value))
-
-      );
+      const percentage =
+        Math.max(
+          0,
+          Math.min(
+            100,
+            Number(value)
+          )
+        );
 
       afterImg.style.clipPath =
-
         `inset(0 ${100 - percentage}% 0 0)`;
 
-      handle.style.left = percentage + "%";
+      handle.style.left =
+        percentage + "%";
 
-      knob.style.left = percentage + "%";
+      knob.style.left =
+        percentage + "%";
 
     }
 
-    slider.addEventListener("input", function(event){
 
-      setBeforeAfter(event.target.value);
+    slider.addEventListener(
+      "input",
+      function(event){
+
+        setBeforeAfter(
+          event.target.value
+        );
+
+      }
+    );
+
+
+    setBeforeAfter(
+      slider.value
+    );
+
+
+    // ONLY ONE MAIN CATEGORY OPEN AT A TIME
+
+    const categories =
+      document.querySelectorAll(".category");
+
+
+    categories.forEach(function(category){
+
+      category.addEventListener(
+        "toggle",
+        function(){
+
+          if(!category.open){
+            return;
+          }
+
+          categories.forEach(
+            function(otherCategory){
+
+              if(
+                otherCategory !== category
+              ){
+
+                otherCategory.removeAttribute(
+                  "open"
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
 
     });
 
-    setBeforeAfter(slider.value);
 
-    // Keep only one project dropdown open at a time
+    // ONLY ONE PROJECT OPEN INSIDE EACH CATEGORY
 
-    const projects = document.querySelectorAll(".project");
+    categories.forEach(function(category){
 
-    projects.forEach(function(project){
+      const projects =
+        category.querySelectorAll(
+          ".sub-project"
+        );
 
-      project.addEventListener("toggle", function(){
 
-        if(!project.open){
+      projects.forEach(function(project){
 
-          return;
+        project.addEventListener(
+          "toggle",
+          function(){
 
-        }
+            if(!project.open){
+              return;
+            }
 
-        projects.forEach(function(otherProject){
+            projects.forEach(
+              function(otherProject){
 
-          if(otherProject !== project){
+                if(
+                  otherProject !== project
+                ){
 
-            otherProject.removeAttribute("open");
+                  otherProject.removeAttribute(
+                    "open"
+                  );
+
+                }
+
+              }
+            );
 
           }
-
-        });
+        );
 
       });
 
     });
 
-    // Contact form
+
+    // CONTACT FORM
 
     function openMail(event){
 
       event.preventDefault();
 
-      const name =
 
-        document.getElementById("name").value.trim();
+      const name =
+        document
+          .getElementById("name")
+          .value
+          .trim();
+
 
       const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
 
-        document.getElementById("email").value.trim();
 
       const subject =
-
-        document.getElementById("subject").value.trim() ||
-
+        document
+          .getElementById("subject")
+          .value
+          .trim()
+        ||
         "Color Grading Inquiry";
 
-      const message =
 
-        document.getElementById("message").value.trim();
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
 
       const body =
-
         `Name: ${name}\n` +
-
         `Email: ${email}\n\n` +
-
         `${message}`;
 
+
       window.location.href =
-
         "mailto:Williammvutu@gmail.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
 
-        "?subject=" + encodeURIComponent(subject) +
-
-        "&body=" + encodeURIComponent(body);
 
       return false;
 
@@ -2199,5 +1751,4 @@
   </script>
 
 </body>
-
 </html>
