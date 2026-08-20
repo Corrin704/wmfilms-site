@@ -171,6 +171,7 @@
       font-weight:700;
       box-shadow:0 10px 30px rgba(139,92,246,.18);
       cursor:pointer;
+      transition:.25s ease;
     }
 
     .btn:hover{
@@ -286,7 +287,7 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(12, minmax(0,1fr));
+      grid-template-columns:repeat(12,minmax(0,1fr));
       gap:14px;
     }
 
@@ -320,6 +321,8 @@
       gap:14px;
       margin-top:18px;
     }
+
+    /* MAIN CATEGORY */
 
     .category{
       overflow:hidden;
@@ -387,9 +390,9 @@
     }
 
     .category-content{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
       padding:0 14px 14px;
       animation:categoryOpen .3s ease;
     }
@@ -406,47 +409,88 @@
       }
     }
 
-    /* INDIVIDUAL PROJECT */
+    /* PROJECT THUMBNAIL */
 
-    .sub-project{
-      overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:rgba(255,255,255,.035);
+    .thumbnail-project{
+      overflow:visible;
+      min-width:0;
     }
 
-    .sub-project summary{
+    .thumbnail-project summary{
       list-style:none;
     }
 
-    .sub-project summary::-webkit-details-marker{
+    .thumbnail-project summary::-webkit-details-marker{
       display:none;
     }
 
-    .sub-project-title{
+    .thumbnail-project-card{
+      position:relative;
+      display:block;
+      width:100%;
+      height:280px;
+      overflow:hidden;
+      cursor:pointer;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#0b0b0f;
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .thumbnail-project-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.22);
+    }
+
+    .thumbnail-project-card > img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:.94;
+      transition:
+        transform .5s ease,
+        opacity .5s ease;
+    }
+
+    .thumbnail-project-card:hover > img{
+      transform:scale(1.05);
+      opacity:1;
+    }
+
+    .thumbnail-overlay{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:14px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:15px;
-      padding:16px;
-      cursor:pointer;
-      transition:background .25s ease;
+      padding:13px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(11,11,15,.72);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
-    .sub-project-title:hover{
-      background:rgba(255,255,255,.05);
-    }
-
-    .sub-project-title b{
+    .thumbnail-overlay b{
       display:block;
       font-size:15px;
     }
 
-    .sub-project-title div span{
+    .thumbnail-overlay div span{
       display:block;
+      margin-top:2px;
       color:var(--muted);
       font-size:12px;
-      margin-top:2px;
+    }
+
+    .thumbnail-project[open] .thumbnail-project-card{
+      border-color:rgba(139,92,246,.6);
     }
 
     .tag{
@@ -459,7 +503,7 @@
       color:var(--muted);
     }
 
-    .sub-project[open] .tag{
+    .thumbnail-project[open] .tag{
       color:var(--text);
       background:rgba(139,92,246,.18);
       border-color:rgba(139,92,246,.55);
@@ -473,21 +517,25 @@
       display:none;
     }
 
-    .sub-project[open] .open-project-label{
+    .thumbnail-project[open] .open-project-label{
       display:none;
     }
 
-    .sub-project[open] .close-project-label{
+    .thumbnail-project[open] .close-project-label{
       display:inline;
     }
 
-    /* PROJECT STILLS */
+    /* STILLS */
 
     .project-stills{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:10px;
-      padding:0 16px 16px;
+      margin-top:10px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
       animation:stillsOpen .3s ease;
     }
 
@@ -512,7 +560,7 @@
     @keyframes stillsOpen{
       from{
         opacity:0;
-        transform:translateY(-5px);
+        transform:translateY(-6px);
       }
 
       to{
@@ -672,6 +720,14 @@
         grid-column:span 12;
       }
 
+      .category-content{
+        grid-template-columns:1fr;
+      }
+
+      .thumbnail-project-card{
+        height:300px;
+      }
+
       .two{
         grid-template-columns:1fr;
       }
@@ -720,13 +776,19 @@
         font-size:12px;
       }
 
-      .sub-project-title{
-        padding:14px;
+      .thumbnail-project-card{
+        height:240px;
+      }
+
+      .thumbnail-overlay{
+        left:10px;
+        right:10px;
+        bottom:10px;
+        padding:11px;
       }
 
       .project-stills{
         grid-template-columns:1fr;
-        padding:0 14px 14px;
       }
 
       .ba{
@@ -798,9 +860,7 @@
 
         <div class="chips" aria-label="Quick facts">
 
-          <span class="chip">
-            DaVinci Resolve
-          </span>
+          <span class="chip">DaVinci Resolve</span>
 
           <span class="chip">
             Log to Rec.709 and HDR
@@ -860,9 +920,9 @@
 
       <div class="project-categories">
 
-        <!-- =====================================
+        <!-- ============================
              SHORT FILMS
-        ====================================== -->
+        ============================= -->
 
         <details class="category">
 
@@ -870,14 +930,10 @@
 
             <div>
               <b>Short Films</b>
-              <span>
-                Cinematic short film work
-              </span>
+              <span>Cinematic short film work</span>
             </div>
 
-            <span class="category-arrow">
-              +
-            </span>
+            <span class="category-arrow">+</span>
 
           </summary>
 
@@ -885,26 +941,35 @@
 
             <!-- MUNTU -->
 
-            <details class="sub-project">
+            <details class="thumbnail-project">
 
-              <summary class="sub-project-title">
+              <summary class="thumbnail-project-card">
 
-                <div>
-                  <b>Muntu</b>
-                  <span>Short Film</span>
+                <img
+                  src="still01.jpg"
+                  alt="Muntu short film thumbnail"
+                />
+
+                <div class="thumbnail-overlay">
+
+                  <div>
+                    <b>Muntu</b>
+                    <span>Short Film</span>
+                  </div>
+
+                  <span class="tag">
+
+                    <span class="open-project-label">
+                      View stills
+                    </span>
+
+                    <span class="close-project-label">
+                      Close
+                    </span>
+
+                  </span>
+
                 </div>
-
-                <span class="tag">
-
-                  <span class="open-project-label">
-                    View stills
-                  </span>
-
-                  <span class="close-project-label">
-                    Close
-                  </span>
-
-                </span>
 
               </summary>
 
@@ -938,55 +1003,13 @@
 
             </details>
 
-            <!--
-            COPY THIS SECTION WHEN YOU ADD ANOTHER SHORT FILM
-
-            <details class="sub-project">
-
-              <summary class="sub-project-title">
-
-                <div>
-                  <b>Another Short Film</b>
-                  <span>Short Film</span>
-                </div>
-
-                <span class="tag">
-
-                  <span class="open-project-label">
-                    View stills
-                  </span>
-
-                  <span class="close-project-label">
-                    Close
-                  </span>
-
-                </span>
-
-              </summary>
-
-              <div class="project-stills">
-
-                <img src="still07.jpg" alt="Still 1" />
-
-                <img src="still08.jpg" alt="Still 2" />
-
-                <img src="still09.jpg" alt="Still 3" />
-
-                <img src="still10.jpg" alt="Still 4" />
-
-              </div>
-
-            </details>
-            -->
-
           </div>
 
         </details>
 
-
-        <!-- =====================================
+        <!-- ============================
              MUSIC VIDEOS
-        ====================================== -->
+        ============================= -->
 
         <details class="category">
 
@@ -994,14 +1017,10 @@
 
             <div>
               <b>Music Videos</b>
-              <span>
-                Stylized music video work
-              </span>
+              <span>Stylized music video work</span>
             </div>
 
-            <span class="category-arrow">
-              +
-            </span>
+            <span class="category-arrow">+</span>
 
           </summary>
 
@@ -1009,26 +1028,35 @@
 
             <!-- MUSIC VIDEO PROJECT -->
 
-            <details class="sub-project">
+            <details class="thumbnail-project">
 
-              <summary class="sub-project-title">
+              <summary class="thumbnail-project-card">
 
-                <div>
-                  <b>Music Video Project</b>
-                  <span>Music Video</span>
+                <img
+                  src="still04.jpg"
+                  alt="Music video project thumbnail"
+                />
+
+                <div class="thumbnail-overlay">
+
+                  <div>
+                    <b>Music Video Project</b>
+                    <span>Music Video</span>
+                  </div>
+
+                  <span class="tag">
+
+                    <span class="open-project-label">
+                      View stills
+                    </span>
+
+                    <span class="close-project-label">
+                      Close
+                    </span>
+
+                  </span>
+
                 </div>
-
-                <span class="tag">
-
-                  <span class="open-project-label">
-                    View stills
-                  </span>
-
-                  <span class="close-project-label">
-                    Close
-                  </span>
-
-                </span>
 
               </summary>
 
@@ -1060,10 +1088,9 @@
 
         </details>
 
-
-        <!-- =====================================
+        <!-- ============================
              COMMERCIALS
-        ====================================== -->
+        ============================= -->
 
         <details class="category">
 
@@ -1071,14 +1098,10 @@
 
             <div>
               <b>Commercials</b>
-              <span>
-                Brand and commercial work
-              </span>
+              <span>Brand and commercial work</span>
             </div>
 
-            <span class="category-arrow">
-              +
-            </span>
+            <span class="category-arrow">+</span>
 
           </summary>
 
@@ -1086,26 +1109,35 @@
 
             <!-- COMMERCIAL PROJECT -->
 
-            <details class="sub-project">
+            <details class="thumbnail-project">
 
-              <summary class="sub-project-title">
+              <summary class="thumbnail-project-card">
 
-                <div>
-                  <b>Commercial Project</b>
-                  <span>Commercial</span>
+                <img
+                  src="still06.jpg"
+                  alt="Commercial project thumbnail"
+                />
+
+                <div class="thumbnail-overlay">
+
+                  <div>
+                    <b>Commercial Project</b>
+                    <span>Commercial</span>
+                  </div>
+
+                  <span class="tag">
+
+                    <span class="open-project-label">
+                      View stills
+                    </span>
+
+                    <span class="close-project-label">
+                      Close
+                    </span>
+
+                  </span>
+
                 </div>
-
-                <span class="tag">
-
-                  <span class="open-project-label">
-                    View stills
-                  </span>
-
-                  <span class="close-project-label">
-                    Close
-                  </span>
-
-                </span>
 
               </summary>
 
@@ -1137,10 +1169,9 @@
 
         </details>
 
-
-        <!-- =====================================
+        <!-- ============================
              DOCUMENTARIES
-        ====================================== -->
+        ============================= -->
 
         <details class="category">
 
@@ -1148,14 +1179,10 @@
 
             <div>
               <b>Documentaries</b>
-              <span>
-                Natural documentary color
-              </span>
+              <span>Natural documentary color</span>
             </div>
 
-            <span class="category-arrow">
-              +
-            </span>
+            <span class="category-arrow">+</span>
 
           </summary>
 
@@ -1163,26 +1190,35 @@
 
             <!-- DOCUMENTARY PROJECT -->
 
-            <details class="sub-project">
+            <details class="thumbnail-project">
 
-              <summary class="sub-project-title">
+              <summary class="thumbnail-project-card">
 
-                <div>
-                  <b>Documentary Project</b>
-                  <span>Documentary</span>
+                <img
+                  src="still02.jpg"
+                  alt="Documentary project thumbnail"
+                />
+
+                <div class="thumbnail-overlay">
+
+                  <div>
+                    <b>Documentary Project</b>
+                    <span>Documentary</span>
+                  </div>
+
+                  <span class="tag">
+
+                    <span class="open-project-label">
+                      View stills
+                    </span>
+
+                    <span class="close-project-label">
+                      Close
+                    </span>
+
+                  </span>
+
                 </div>
-
-                <span class="tag">
-
-                  <span class="open-project-label">
-                    View stills
-                  </span>
-
-                  <span class="close-project-label">
-                    Close
-                  </span>
-
-                </span>
 
               </summary>
 
@@ -1263,7 +1299,6 @@
             viewBox="0 0 24 24"
             fill="none"
           >
-
             <path
               d="M14 7l-5 5 5 5"
               stroke="currentColor"
@@ -1271,7 +1306,6 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-
           </svg>
 
           <svg
@@ -1280,7 +1314,6 @@
             viewBox="0 0 24 24"
             fill="none"
           >
-
             <path
               d="M10 7l5 5-5 5"
               stroke="currentColor"
@@ -1288,7 +1321,6 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-
           </svg>
 
         </div>
@@ -1314,12 +1346,9 @@
       <div class="grid">
 
         <div class="card panel col-4">
-
           <div class="service">
 
-            <b>
-              Look Development
-            </b>
+            <b>Look Development</b>
 
             <small>
               Custom looks, film emulation, and visual styles matched
@@ -1327,16 +1356,12 @@
             </small>
 
           </div>
-
         </div>
 
         <div class="card panel col-4">
-
           <div class="service">
 
-            <b>
-              Color and Cleanup
-            </b>
+            <b>Color and Cleanup</b>
 
             <small>
               Exposure balancing, skin-tone correction, shot matching,
@@ -1344,16 +1369,12 @@
             </small>
 
           </div>
-
         </div>
 
         <div class="card panel col-4">
-
           <div class="service">
 
-            <b>
-              Finishing Support
-            </b>
+            <b>Finishing Support</b>
 
             <small>
               Quality control, export guidance, and consistent
@@ -1361,7 +1382,6 @@
             </small>
 
           </div>
-
         </div>
 
       </div>
@@ -1378,14 +1398,10 @@
         <div class="card panel col-8">
 
           <p style="margin-top:0">
-
             I’m <b>William Mvutu</b>, a colorist under
-            <b>WM Films</b>.
-
-            I focus on cinematic color that feels natural,
-            premium, and consistent, whether it is a music
+            <b>WM Films</b>. I focus on cinematic color that feels
+            natural, premium, and consistent, whether it is a music
             video, documentary, short film, or commercial.
-
           </p>
 
           <p class="muted" style="margin-bottom:0">
@@ -1438,14 +1454,9 @@
         <div class="card panel col-6">
 
           <p class="muted" style="margin-top:0">
-
-            Tell me about your project.
-
-            Include the project type, runtime, deadline,
-            camera, and visual references.
-
+            Tell me about your project. Include the project type,
+            runtime, deadline, camera, and visual references.
             I’ll reply with the next steps.
-
           </p>
 
           <div class="cols" style="margin-top:12px">
@@ -1467,11 +1478,8 @@
           </div>
 
           <p class="note" style="margin-top:12px">
-
             Email: Williammvutu@gmail.com<br />
-
             Phone: +1 980 907 5423
-
           </p>
 
         </div>
@@ -1540,23 +1548,21 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-
       © <span id="year"></span>
       William Mvutu. All rights reserved.
-
     </footer>
 
   </main>
 
   <script>
 
-    // YEAR
+    /* YEAR */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
-    // BEFORE / AFTER
+    /* BEFORE / AFTER */
 
     const slider =
       document.getElementById("slider");
@@ -1611,7 +1617,7 @@
     );
 
 
-    // ONLY ONE MAIN CATEGORY OPEN AT A TIME
+    /* ONLY ONE MAIN CATEGORY OPEN */
 
     const categories =
       document.querySelectorAll(".category");
@@ -1649,13 +1655,13 @@
     });
 
 
-    // ONLY ONE PROJECT OPEN INSIDE EACH CATEGORY
+    /* ONLY ONE PROJECT OPEN PER CATEGORY */
 
     categories.forEach(function(category){
 
       const projects =
         category.querySelectorAll(
-          ".sub-project"
+          ".thumbnail-project"
         );
 
 
@@ -1693,7 +1699,7 @@
     });
 
 
-    // CONTACT FORM
+    /* CONTACT */
 
     function openMail(event){
 
